@@ -19,3 +19,8 @@ def liferay_portlet():
 		with lcd(liferay_portlet_dir):
 			print portlet_name_list[i]
 			local('s3cmd put --recursive --exclude ./WEB-INF --include ./* s3://sbw_qa_bucket/'+portlet_name_list[i]+'/')
+			
+			
+def full_theme():
+	liferay_theme()
+	liferay_portlet()
